@@ -18,4 +18,9 @@ import com.SystemRH.SystemRH.repository.VagaRepository;
 public class VagaController {
 	private VagaRepository vr;
 	private CandidatoRopository cr;
+
+	// CADASTRA VAGA
+	@RequestMapping(value = "/cadastrarVaga", method = RequestMethod.GET)
+	public String form() {
+		return "vaga/formVaga";
 }
