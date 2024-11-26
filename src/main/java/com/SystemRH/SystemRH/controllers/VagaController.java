@@ -23,4 +23,5 @@ public class VagaController {
 	@RequestMapping(value = "/cadastrarVaga", method = RequestMethod.GET)
 	public String form() {
 		return "vaga/formVaga";
+	}
 }
