@@ -19,9 +19,18 @@ public class VagaController {
 	private VagaRepository vr;
 	private CandidatoRopository cr;
 
-	// CADASTRA VAGA
 	@RequestMapping(value = "/cadastrarVaga", method = RequestMethod.GET)
 	public String form() {
 		return "vaga/formVaga";
+	}
+	@RequestMapping(value = "/cadastrarVaga", method = RequestMethod.POST)
+	public String form(@Valid Vaga vaga, BindingResult result, RedirectAttributes attributes) {
+		 if (result.hasErrors()) {
+			attributes.addFlashAttribute("mensagem", "Verifique os campos...");
+			return "redirect:/cadastrarVaga"; 
+		}
+		vr.save(vaga);
+		attributes.addFlashAttribute("mensagem", "Vaga cadastrada com sucesso!");
+		return "redirect:/cadastrarVaga";
 	}
 }
