@@ -15,6 +15,7 @@ import com.SystemRH.SystemRH.models.Vaga;
 import com.SystemRH.SystemRH.repository.CandidatoRopository;
 import com.SystemRH.SystemRH.repository.VagaRepository;
 
+@Controller
 public class VagaController {
 	private VagaRepository vr;
 	private CandidatoRopository cr;
