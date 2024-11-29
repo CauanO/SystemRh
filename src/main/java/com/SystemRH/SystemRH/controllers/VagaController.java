@@ -34,4 +34,25 @@ public class VagaController {
 		attributes.addFlashAttribute("mensagem", "Vaga cadastrada com sucesso!");
 		return "redirect:/cadastrarVaga";
 	}
+	// LISTAR VAGAS
+	@RequestMapping("/vagas")
+	public ModelAndView listaVagas() {
+		ModelAndView mv = new ModelAndView("vaga/listaVaga");
+		Iterable<Vaga>vagas = vr.findAll();
+		mv.addObject("vagas", vagas);
+		return mv;
+	}
+	
+	// DETALHES VAGA
+	@RequestMapping(value = "/codigo", method = RequestMethod.GET)
+	public ModelAndView detalhesVagas(@PathVariable("codigo") long codigo) {
+		Vaga vaga = vr.findByCodigo(codigo);
+		ModelAndView mv = new ModelAndView("vaga/detalhesVaga");
+		mv.addObject("vaga", vaga);
+		
+		Iterable<Cadidato>cadidatos = cr.findByVaga(vaga);
+		mv.addObject("caditados", cadidatos);
+		
+		return mv;
+	}
 }
