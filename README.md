@@ -1,4 +1,8 @@
+## Status do Projeto
 
+[![Projeto em Andamento](https://img.shields.io/badge/Projeto-Andamento-yellow)](#)
+
+---
 # SystemRH
 
 ## Sobre o projeto
