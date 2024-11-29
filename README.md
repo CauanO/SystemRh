@@ -1,5 +1,5 @@
 
-# SystemRH - README
+# SystemRH
 
 ## Sobre o projeto
 
